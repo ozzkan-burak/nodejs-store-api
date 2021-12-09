@@ -4,8 +4,8 @@ require('dotenv').config();
 const express = require ('express');
 const app = express();
 
-// const notFound = require('./middleware/not-found');
-// const errorHandler = require('./middleware/error-handler');
+const notFound = require('./middleware/not-found');
+const errorHandler = require('./middleware/error-handler');
 
 // middleware
 app.use(express.json());
@@ -19,8 +19,8 @@ app.get('/', (req, res) => {
 // product route
 
 
-// app.use(notFound);
-// app.use(errorHandler);
+app.use(notFound);
+app.use(errorHandler);
 
 const port = process.env.PORT || 5002;
 
